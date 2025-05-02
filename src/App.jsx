@@ -10,6 +10,9 @@ import TempletOne from "./Componants/TempletOne/TempletOne";
 import DataContextProvider from "./Componants/DataContext/DataContext";
 import FinalResult from "./Componants/FinalResult/FinalResult";
 
+// تحديد basename حسب اسم الريبو
+const basename = process.env.NODE_ENV === 'production' ? '/resume-maker-site' : '';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,7 +30,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} basename={basename} />;
 }
 
 export default App;
